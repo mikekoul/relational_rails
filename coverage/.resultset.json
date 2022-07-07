@@ -253,14 +253,65 @@
           null
         ]
       },
+      "/Users/michaelkoulouvaris/turing/2module/projects/relational_rails/spec/models/director_spec.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          1,
+          2,
+          2,
+          2,
+          2,
+          null,
+          null,
+          1,
+          2,
+          null,
+          null
+        ]
+      },
       "/Users/michaelkoulouvaris/turing/2module/projects/relational_rails/app/models/director.rb": {
         "lines": [
+          1,
+          1,
+          1,
+          1,
           1,
           null
         ]
       },
       "/Users/michaelkoulouvaris/turing/2module/projects/relational_rails/app/models/application_record.rb": {
         "lines": [
+          1,
+          1,
+          null
+        ]
+      },
+      "/Users/michaelkoulouvaris/turing/2module/projects/relational_rails/spec/models/film_spec.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          null,
+          1,
+          2,
+          2,
+          2,
+          2,
+          null,
+          null,
+          1,
+          2,
+          null,
+          null
+        ]
+      },
+      "/Users/michaelkoulouvaris/turing/2module/projects/relational_rails/app/models/film.rb": {
+        "lines": [
+          1,
+          1,
+          1,
           1,
           1,
           null
@@ -282,6 +333,6 @@
         ]
       }
     },
-    "timestamp": 1657158921
+    "timestamp": 1657215087
   }
 }
