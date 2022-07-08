@@ -8,8 +8,6 @@ RSpec.describe "Director films index", type: :feature do
 
     visit "/directors/#{kubrick.id}/films"
 
-    save_and_open_page
-
     expect(page).to have_content(shining.name)
     expect(page).to have_content(shining.runtime)
     expect(page).to have_content(shining.streaming_on_netflix)
