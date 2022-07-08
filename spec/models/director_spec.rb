@@ -11,4 +11,17 @@ RSpec.describe Director, type: :model do
   describe 'relationships' do
     it { should have_many :films }
   end
+
+  describe 'methods' do
+    it 'returns directors sorted by which was created first to last' do
+      kubrick = Director.create!(name: "Stanley Kubrick", academy_awards: 13, deceased: true)
+      carpenter = Director.create!(name: "John Carpenter", academy_awards: 0, deceased: false)
+      jackson = Director.create!(name: "Peter Jackson", academy_awards: 9, deceased: false)
+      toro = Director.create!(name: "Guillermo del Toro", academy_awards: 6, deceased: false)
+      directors = Director.all
+
+    expect(directors.sort_by_datetime_created.first).to eq(toro)
+    expect(directors.sort_by_datetime_created.last).to eq(kubrick)
+    end
+  end
 end
