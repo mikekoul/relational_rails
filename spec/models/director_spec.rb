@@ -8,7 +8,7 @@ RSpec.describe Director, type: :model do
     it { should allow_value(false).for(:deceased) }
   end
 
-    describe 'relationships' do
+  describe 'relationships' do
     it { should have_many :films }
   end
 end

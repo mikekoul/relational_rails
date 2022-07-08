@@ -1,6 +1,6 @@
-<h1>Films</h1>
+
 <% @films.each do |film| %>
-  <h3><%= film.name %></h3>
+  <h2><%= film.name %></h2>
   <p>Runtime: <%= film.runtime%></p>
   <p>Streaming on Netflix: <%= film.streaming_on_netflix %></p>
 <% end %>
