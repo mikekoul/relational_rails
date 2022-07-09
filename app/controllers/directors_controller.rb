@@ -8,12 +8,12 @@ class DirectorsController < ApplicationController
   end
 
   def create
-    director = Director.create!({
-    name: params[:name],
-    academy_awards: params[:academy_awards],
-    deceased: params[:deceased]
-    })
+    director = Director.create!(director_params)
     redirect_to "/directors"
+  end
+
+  def director_params
+    params.permit(:name, :academy_awards, :deceased)
   end
 
   def show
