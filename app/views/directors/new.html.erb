@@ -1,0 +1,10 @@
+<%= form_with url:'/directors', method: :post, local: true do |form|  %>
+  <%= form.label :name %></br>
+  <%= form.text_field :name %></br>
+  <%= form.label :academy_awards %></br>
+  <%= form.text_field :academy_awards %></br>
+  <%= form.label :deceased  %></br>
+  <%= form.text_field :deceased %></br>
+  </br>
+  <%= form.submit "Create Director" %>
+<% end %>

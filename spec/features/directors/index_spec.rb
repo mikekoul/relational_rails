@@ -59,22 +59,33 @@ RSpec.describe "directors index page", type: :feature do
   end
 
   it "has link to films index" do
-      carpenter = Director.create!(name: "John Carpenter", academy_awards: 0, deceased: false)
-      mars = carpenter.films.create!(name: 'Ghosts of Mars', runtime: 98, streaming_on_netflix: false)
+    carpenter = Director.create!(name: "John Carpenter", academy_awards: 0, deceased: false)
+    mars = carpenter.films.create!(name: 'Ghosts of Mars', runtime: 98, streaming_on_netflix: false)
 
-      visit "/directors/#{carpenter.id}"
+    visit "/directors/#{carpenter.id}"
 
-      expect(page).to have_link('Film Index')
-    end
+    expect(page).to have_link('Film Index')
+  end
 
   it "click film index link and go to film index page" do
-      carpenter = Director.create!(name: "John Carpenter", academy_awards: 0, deceased: false)
-      mars = carpenter.films.create!(name: 'Ghosts of Mars', runtime: 98, streaming_on_netflix: false)
+    carpenter = Director.create!(name: "John Carpenter", academy_awards: 0, deceased: false)
+    mars = carpenter.films.create!(name: 'Ghosts of Mars', runtime: 98, streaming_on_netflix: false)
 
-      visit "/directors/#{carpenter.id}"
+    visit "/directors/#{carpenter.id}"
 
-      click_link('Film Index')
+    click_link('Film Index')
 
-      expect(current_path).to eq("/films")
+    expect(current_path).to eq("/films")
+  end
+
+  it "has link to create new director" do
+    kubrick = Director.create!(name: 'Stanley Kubrick', academy_awards: 13, deceased: true)
+    carpenter = Director.create!(name: 'John Carpenter', academy_awards: 0, deceased: false)
+    jackson = Director.create!(name: 'Peter Jackson', academy_awards: 9, deceased: false)
+    toro = Director.create!(name: 'Guillermo del Toro', academy_awards: 6, deceased: false)
+
+    visit "/directors"
+
+    expect(page).to have_link('New Director')
   end
 end
