@@ -1,0 +1,10 @@
+<%= form_with url:"/films/#{@film.id}", method: :patch, local: true do |form|  %>
+  <%= form.label :name %></br>
+  <%= form.text_field :name %></br>
+  <%= form.label :runtime %></br>
+  <%= form.text_field :runtime %></br>
+  <%= form.label :streaming_on_netflix  %></br>
+  <%= form.text_field :streaming_on_netflix %></br>
+  </br>
+  <%= form.submit 'Update Film' %>
+<% end %>

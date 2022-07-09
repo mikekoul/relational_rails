@@ -28,8 +28,6 @@ RSpec.describe "Director films creation page", type: :feature do
     
     click_button("Add Film")
 
-    save_and_open_page
-
     expect(current_path).to eq("/directors/#{carpenter.id}/films")
     expect(page).to have_content("The Thing")
   end

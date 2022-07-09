@@ -74,4 +74,13 @@ RSpec.describe "Films show page", type: :feature do
 
     expect(current_path).to eq("/films")
   end
+
+  it "has link to film update page" do
+    carpenter = Director.create!(name: "John Carpenter", academy_awards: 0, deceased: false)
+    vamps = carpenter.films.create!(name: 'Vampires', runtime: 103, streaming_on_netflix: true)
+
+    visit "/films/#{vamps.id}"
+
+    expect(page).to have_link('Update Film')
+  end
 end
