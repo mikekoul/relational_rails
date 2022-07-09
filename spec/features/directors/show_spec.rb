@@ -80,5 +80,29 @@ RSpec.describe "Directors show page", type: :feature do
 
       expect(current_path).to eq("/films")
     end
+
+    it 'has link to directors films page' do
+      jackson = Director.create!(name: 'Peter Jackson', academy_awards: 9, deceased: false)
+      hobbit = jackson.films.create!(name: 'The Hobbit', runtime: 169, streaming_on_netflix: true)
+      kong = jackson.films.create!(name: 'King Kong', runtime: 201, streaming_on_netflix: true)
+      rings = jackson.films.create!(name: 'Lord of the Rings', runtime: 178, streaming_on_netflix: true)
+
+      visit "/directors/#{jackson.id}"
+
+      expect(page).to have_link('Films')
+    end
+
+    it 'click film link and go to directors film page' do
+      jackson = Director.create!(name: 'Peter Jackson', academy_awards: 9, deceased: false)
+      hobbit = jackson.films.create!(name: 'The Hobbit', runtime: 169, streaming_on_netflix: true)
+      kong = jackson.films.create!(name: 'King Kong', runtime: 201, streaming_on_netflix: true)
+      rings = jackson.films.create!(name: 'Lord of the Rings', runtime: 178, streaming_on_netflix: true)
+
+      visit "/directors/#{jackson.id}"
+
+      click_link('Films')
+
+      expect(current_path).to eq("/directors/#{jackson.id}/films")
+    end
   end
 end

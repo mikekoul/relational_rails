@@ -2,5 +2,6 @@
 <a href="/films">Film Index</a>
 <h1><%= @director.name  %></h1>
   <p>Number of Films: <%= @director.film_count %></p>
-  <p>Academy Awards: <%= @director.academy_awards%>
-  <p>Deceased: <%= @director.deceased %>
+  <p>Academy Awards: <%= @director.academy_awards%></p>
+  <p>Deceased: <%= @director.deceased %></p>
+  <%= link_to "Films", "/directors/#{@director.id}/films" %>
