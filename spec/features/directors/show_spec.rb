@@ -104,5 +104,13 @@ RSpec.describe "Directors show page", type: :feature do
 
       expect(current_path).to eq("/directors/#{jackson.id}/films")
     end
+
+    it 'has link to Update director show page' do
+      kubrick = Director.create!(name: "Stanley Kubrick", academy_awards: 13, deceased: true)
+
+    visit "/directors/#{kubrick.id}"
+
+    expect(page).to have_link("Update")
+    end
   end
 end

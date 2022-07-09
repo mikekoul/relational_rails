@@ -1,6 +1,7 @@
 <a href="/directors">Director Index</a></br>
 <a href="/films">Film Index</a>
 <h1><%= @director.name  %></h1>
+  <%= link_to "Update Director", "/directors/#{@director.id}/edit", method: :get %>
   <p>Number of Films: <%= @director.film_count %></p>
   <p>Academy Awards: <%= @director.academy_awards%></p>
   <p>Deceased: <%= @director.deceased %></p>

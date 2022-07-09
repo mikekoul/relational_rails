@@ -12,12 +12,23 @@ class DirectorsController < ApplicationController
     redirect_to "/directors"
   end
 
-  def director_params
-    params.permit(:name, :academy_awards, :deceased)
+  
+  def edit
+    @director = Director.find(params[:id])
   end
-
+  
+  def update
+    director = Director.find(params[:id])
+    director.update(director_params)
+    redirect_to "/directors/#{director.id}"
+  end
+  
   def show
     @director = Director.find(params[:id])
   end
 
+  private
+  def director_params
+    params.permit(:name, :academy_awards, :deceased)
+  end
 end
