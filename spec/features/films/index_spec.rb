@@ -37,4 +37,24 @@ RSpec.describe 'Films index' do
 
     expect(current_path).to eq("/directors")
   end
+
+  it "has link to films index" do
+    carpenter = Director.create!(name: "John Carpenter", academy_awards: 0, deceased: false)
+    mars = carpenter.films.create!(name: 'Ghosts of Mars', runtime: 98, streaming_on_netflix: false)
+
+    visit "/films"
+
+    expect(page).to have_link('Film Index')
+  end
+
+  it "click film index link and go to film index page" do
+    carpenter = Director.create!(name: "John Carpenter", academy_awards: 0, deceased: false)
+    mars = carpenter.films.create!(name: 'Ghosts of Mars', runtime: 98, streaming_on_netflix: false)
+
+    visit "/films"
+
+    click_link('Film Index')
+
+    expect(current_path).to eq("/films")
+  end
 end
