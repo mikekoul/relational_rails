@@ -42,5 +42,23 @@ RSpec.describe "Directors show page", type: :feature do
 
       expect(page).to have_content("Number of Films: 3")
     end
+
+    it "has link to director index" do
+      carpenter = Director.create!(name: "John Carpenter", academy_awards: 0, deceased: false)
+
+      visit "/directors/#{carpenter.id}"
+
+      expect(page).to have_link('Director Index')
+    end
+
+    it "click director index link and go to director index page" do
+      carpenter = Director.create!(name: "John Carpenter", academy_awards: 0, deceased: false)
+
+      visit "/directors/#{carpenter.id}"
+
+      click_link('Director Index')
+
+      expect(current_path).to eq("/directors")
+    end
   end
 end
