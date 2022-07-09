@@ -5,3 +5,4 @@
   <p>Runtime: <%= film.runtime%></p>
   <p>Streaming on Netflix: <%= film.streaming_on_netflix %></p>
 <% end %>
+  <%= link_to "Add Film", "/directors/#{@director.id}/films/new" %>
