@@ -53,4 +53,15 @@ RSpec.describe "Director films index", type: :feature do
 
     expect(current_path).to eq("/films")
   end
+
+  it 'has a link to create a new film for director' do
+    carpenter = Director.create!(name: 'John Carpenter', academy_awards: 0, deceased: false)
+    halloween = carpenter.films.create!(name: 'Halloween', runtime: 91, streaming_on_netflix: false)
+    vamps = carpenter.films.create!(name: 'Vampires', runtime: 103, streaming_on_netflix: true)
+    mars = carpenter.films.create!(name: 'Ghosts of Mars', runtime: 98, streaming_on_netflix: false)
+
+    visit "/directors/#{carpenter.id}/films"
+
+    expect(page).to have_link("Add Film")
+  end
 end

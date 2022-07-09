@@ -10,6 +10,7 @@ RSpec.describe 'Director creation' do
   end
 
   it 'can create a new director' do
+    
     visit '/directors/new'
 
     fill_in('Name', with: 'Peter Jackson')
