@@ -7,4 +7,8 @@ class Director < ApplicationRecord
   def self.sort_by_datetime_created
     order(created_at: :desc)
   end
+
+  def film_count
+    self.films.count
+  end
 end

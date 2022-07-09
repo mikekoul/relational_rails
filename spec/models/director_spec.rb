@@ -23,5 +23,14 @@ RSpec.describe Director, type: :model do
     expect(directors.sort_by_datetime_created.first).to eq(toro)
     expect(directors.sort_by_datetime_created.last).to eq(kubrick)
     end
+
+    it 'returns number of films belonging to director' do
+      carpenter = Director.create!(name: "John Carpenter", academy_awards: 0, deceased: false)
+      halloween = carpenter.films.create!(name: 'Halloween', runtime: 91, streaming_on_netflix: false)
+      vamps = carpenter.films.create!(name: 'Vampires', runtime: 103, streaming_on_netflix: true)
+      mars = carpenter.films.create!(name: 'Ghosts of Mars', runtime: 98, streaming_on_netflix: false)
+
+      expect(carpenter.film_count).to eq(3)
+    end
   end
 end
