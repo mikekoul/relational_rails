@@ -2,7 +2,9 @@
 <a href="/films">Film Index</a>
 <h1>Films</h1>
 <% @films.each do |film| %>
+<% if film.streaming_on_netflix? %>
   <h3><%= film.name %></h3>
   <p>Runtime: <%= film.runtime%></p>
   <p>Streaming on Netflix: <%= film.streaming_on_netflix %></p>
+<% end %>
 <% end %>
