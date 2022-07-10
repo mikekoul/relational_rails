@@ -20,8 +20,8 @@ RSpec.describe Director, type: :model do
       toro = Director.create!(name: "Guillermo del Toro", academy_awards: 6, deceased: false)
       directors = Director.all
 
-    expect(directors.sort_by_datetime_created.first).to eq(toro)
-    expect(directors.sort_by_datetime_created.last).to eq(kubrick)
+      expect(directors.sort_by_datetime_created.first).to eq(toro)
+      expect(directors.sort_by_datetime_created.last).to eq(kubrick)
     end
 
     it 'returns number of films belonging to director' do
