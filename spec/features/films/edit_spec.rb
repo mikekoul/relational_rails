@@ -24,7 +24,6 @@ RSpec.describe "Film update on show page", type: :feature do
 
     click_button 'Update Film'
 
-
     expect(current_path).to eq("/films/#{vamps.id}")
     expect(page).to have_content('Vampires')
   end
