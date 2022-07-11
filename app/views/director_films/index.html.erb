@@ -2,7 +2,7 @@
 <a href="/films">Film Index</a>
 <% @films.each_with_index do |film, index| %>
 <div id="film<%= index %>">
-  <h2><%= film.name %></h2>
+  <h2><%= film.name %><small><%= link_to "Edit", "/films/#{film.id}/edit", method: :get %></small></h2>
   <p>Runtime: <%= film.runtime%></p>
   <p>Streaming on Netflix: <%= film.streaming_on_netflix %></p>
   </div>

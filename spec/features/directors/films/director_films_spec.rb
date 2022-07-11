@@ -97,6 +97,42 @@ RSpec.describe "Director films index", type: :feature do
     within "#film2" do
       expect(page).to have_content('Vampires')
     end
+  end
 
+    it 'has link to edit each film' do
+    kubrick = Director.create!(name: 'Stanley Kubrick', academy_awards: 13, deceased: true)
+    shining = kubrick.films.create!(name: 'The Shining', runtime: 146, streaming_on_netflix: true)
+    fmj = kubrick.films.create!(name: 'Full Metal Jacket', runtime: 116, streaming_on_netflix: true)
+    orange = kubrick.films.create!(name: 'A Clockwork Orange', runtime: 136, streaming_on_netflix: false)
+
+    visit "/directors/#{kubrick.id}/films"
+
+    within "#film0" do
+      expect(page).to have_link("Edit")
+
+      click_link "Edit"
+
+      expect(current_path).to eq("/films/#{shining.id}/edit")
+    end
+
+    visit "/directors/#{kubrick.id}/films"
+
+    within "#film1" do
+      expect(page).to have_link("Edit")
+
+      click_link "Edit"
+
+      expect(current_path).to eq("/films/#{fmj.id}/edit")
+    end
+
+    visit "/directors/#{kubrick.id}/films"
+
+    within "#film2" do
+      expect(page).to have_link("Edit")
+
+      click_link "Edit"
+
+      expect(current_path).to eq("/films/#{orange.id}/edit")
+    end
   end
 end
