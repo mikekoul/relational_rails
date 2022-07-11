@@ -85,8 +85,6 @@ RSpec.describe 'Films index' do
 
       visit "/films"
 
-      save_and_open_page
-
       within "#film0" do
         expect(page).to have_link("Edit")
 
@@ -94,6 +92,7 @@ RSpec.describe 'Films index' do
 
         expect(current_path).to eq("/films/#{shining.id}/edit")
       end
+      
       visit "/films"
 
       within "#film1" do
