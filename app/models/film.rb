@@ -10,5 +10,6 @@ class Film < ApplicationRecord
 
   def self.sort_alphabetically
     order(:name)
-  end
+  end  
+
 end

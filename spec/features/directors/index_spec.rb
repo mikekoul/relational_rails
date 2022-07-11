@@ -40,52 +40,101 @@ RSpec.describe "directors index page", type: :feature do
     end
   end
 
-  it "has link to director index" do
-    carpenter = Director.create!(name: "John Carpenter", academy_awards: 0, deceased: false)
+  describe "#directors index links" do  
+    it "has link to director index" do
+      carpenter = Director.create!(name: "John Carpenter", academy_awards: 0, deceased: false)
 
-    visit "/directors/#{carpenter.id}"
+      visit "/directors"
 
-    expect(page).to have_link('Director Index')
-  end
+      expect(page).to have_link('Director Index')
+    end
 
-  it "click director index link and go to director index page" do
-    carpenter = Director.create!(name: "John Carpenter", academy_awards: 0, deceased: false)
+    it "click director index link and go to director index page" do
+      carpenter = Director.create!(name: "John Carpenter", academy_awards: 0, deceased: false)
 
-    visit "/directors/#{carpenter.id}"
+      visit "/directors"
 
-    click_link('Director Index')
+      click_link('Director Index')
 
-    expect(current_path).to eq("/directors")
-  end
+      expect(current_path).to eq("/directors")
+    end
 
-  it "has link to films index" do
-    carpenter = Director.create!(name: "John Carpenter", academy_awards: 0, deceased: false)
-    mars = carpenter.films.create!(name: 'Ghosts of Mars', runtime: 98, streaming_on_netflix: false)
+    it "has link to films index" do
+      carpenter = Director.create!(name: "John Carpenter", academy_awards: 0, deceased: false)
+      mars = carpenter.films.create!(name: 'Ghosts of Mars', runtime: 98, streaming_on_netflix: false)
 
-    visit "/directors/#{carpenter.id}"
+      visit "/directors"
 
-    expect(page).to have_link('Film Index')
-  end
+      expect(page).to have_link('Film Index')
+    end
 
-  it "click film index link and go to film index page" do
-    carpenter = Director.create!(name: "John Carpenter", academy_awards: 0, deceased: false)
-    mars = carpenter.films.create!(name: 'Ghosts of Mars', runtime: 98, streaming_on_netflix: false)
+    it "click film index link and go to film index page" do
+      carpenter = Director.create!(name: "John Carpenter", academy_awards: 0, deceased: false)
+      mars = carpenter.films.create!(name: 'Ghosts of Mars', runtime: 98, streaming_on_netflix: false)
 
-    visit "/directors/#{carpenter.id}"
+      visit "/directors"
 
-    click_link('Film Index')
+      click_link('Film Index')
 
-    expect(current_path).to eq("/films")
-  end
+      expect(current_path).to eq("/films")
+    end
 
-  it "has link to create new director" do
-    kubrick = Director.create!(name: 'Stanley Kubrick', academy_awards: 13, deceased: true)
-    carpenter = Director.create!(name: 'John Carpenter', academy_awards: 0, deceased: false)
-    jackson = Director.create!(name: 'Peter Jackson', academy_awards: 9, deceased: false)
-    toro = Director.create!(name: 'Guillermo del Toro', academy_awards: 6, deceased: false)
+    it "has link to create new director" do
+      kubrick = Director.create!(name: 'Stanley Kubrick', academy_awards: 13, deceased: true)
+      carpenter = Director.create!(name: 'John Carpenter', academy_awards: 0, deceased: false)
+      jackson = Director.create!(name: 'Peter Jackson', academy_awards: 9, deceased: false)
+      toro = Director.create!(name: 'Guillermo del Toro', academy_awards: 6, deceased: false)
 
-    visit "/directors"
+      visit "/directors"
 
-    expect(page).to have_link('New Director')
+      expect(page).to have_link('New Director')
+    end
+
+    it "has links to edit director" do
+      kubrick = Director.create!(name: 'Stanley Kubrick', academy_awards: 13, deceased: true)
+      carpenter = Director.create!(name: 'John Carpenter', academy_awards: 0, deceased: false)
+      jackson = Director.create!(name: 'Peter Jackson', academy_awards: 9, deceased: false)
+      toro = Director.create!(name: 'Guillermo del Toro', academy_awards: 6, deceased: false)
+
+      visit "/directors"
+
+      within "#director0" do
+      expect(page).to have_link("Edit")
+
+      click_link "Edit"
+
+      expect(current_path).to eq("/directors/#{toro.id}/edit")
+      end
+
+      visit "/directors"
+
+      within "#director1" do
+        expect(page).to have_link("Edit")
+
+        click_link "Edit"
+
+        expect(current_path).to eq("/directors/#{jackson.id}/edit")
+      end
+
+      visit "/directors"
+
+      within "#director2" do
+        expect(page).to have_link("Edit")
+
+        click_link "Edit"
+
+        expect(current_path).to eq("/directors/#{carpenter.id}/edit")
+      end
+
+      visit "/directors"
+
+      within "#director3" do
+        expect(page).to have_link("Edit")
+
+        click_link "Edit"
+
+        expect(current_path).to eq("/directors/#{kubrick.id}/edit")
+      end
+    end
   end
 end

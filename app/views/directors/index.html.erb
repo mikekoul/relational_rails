@@ -4,7 +4,7 @@
 
 <% @directors.each_with_index do |director, index| %>
 <div id="director<%= index %>">
-<h3><%= director.name %>  </h3>
+<h3><%= director.name %><small><%= link_to "Edit", "/directors/#{director.id}/edit", method: :get %></small></h3>
 <p>Created at: <%= director.created_at %></p>
 </div>
 <% end %>

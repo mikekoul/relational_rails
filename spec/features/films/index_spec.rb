@@ -17,7 +17,7 @@ RSpec.describe 'Films index' do
     expect(page).to have_content(vamps.streaming_on_netflix)
   end
 
-  describe ('#index links') do
+  describe '#index links' do
     it "has link to director index" do
       carpenter = Director.create!(name: "John Carpenter", academy_awards: 0, deceased: false)
       vamps = carpenter.films.create!(name: 'Vampires', runtime: 103, streaming_on_netflix: true)
@@ -59,7 +59,7 @@ RSpec.describe 'Films index' do
     end
   end
 
-  describe ('#new_index_view') do
+  describe '#updated_index_page' do
     it 'displays only the films that are streaming on netflix' do
       kubrick = Director.create!(name: 'Stanley Kubrick', academy_awards: 13, deceased: true)
       carpenter = Director.create!(name: 'John Carpenter', academy_awards: 0, deceased: false)
@@ -76,6 +76,33 @@ RSpec.describe 'Films index' do
       expect(page).to_not have_content("Halloween")
       expect(page).to_not have_content("Crimson Peak")
     end
-  end
 
+    it 'has link to edit each film' do
+      kubrick = Director.create!(name: 'Stanley Kubrick', academy_awards: 13, deceased: true)
+      toro = Director.create!(name: 'Guillermo del Toro', academy_awards: 6, deceased: false)
+      shining = kubrick.films.create!(name: 'The Shining', runtime: 146, streaming_on_netflix: true)
+      water = toro.films.create!(name: 'The Shape of Water', runtime: 123, streaming_on_netflix: true)
+
+      visit "/films"
+
+      save_and_open_page
+
+      within "#film0" do
+        expect(page).to have_link("Edit")
+
+        click_link "Edit"
+
+        expect(current_path).to eq("/films/#{shining.id}/edit")
+      end
+      visit "/films"
+
+      within "#film1" do
+        expect(page).to have_link("Edit")
+
+        click_link "Edit"
+
+        expect(current_path).to eq("/films/#{water.id}/edit")
+      end
+    end
+  end
 end
