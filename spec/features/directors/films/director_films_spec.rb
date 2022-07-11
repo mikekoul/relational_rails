@@ -64,4 +64,39 @@ RSpec.describe "Director films index", type: :feature do
 
     expect(page).to have_link("Add Film")
   end
+
+  it 'has a link to sort films alphabetically' do
+    carpenter = Director.create!(name: 'John Carpenter', academy_awards: 0, deceased: false)
+    halloween = carpenter.films.create!(name: 'Halloween', runtime: 91, streaming_on_netflix: false)
+    vamps = carpenter.films.create!(name: 'Vampires', runtime: 103, streaming_on_netflix: true)
+    mars = carpenter.films.create!(name: 'Ghosts of Mars', runtime: 98, streaming_on_netflix: false)
+
+    visit "/directors/#{carpenter.id}/films"
+  
+    expect(page).to have_link("Sort Films Alphabetically")
+  end
+
+  it 'click link to sort films alphabetically' do
+    carpenter = Director.create!(name: 'John Carpenter', academy_awards: 0, deceased: false)
+    halloween = carpenter.films.create!(name: 'Halloween', runtime: 91, streaming_on_netflix: false)
+    vamps = carpenter.films.create!(name: 'Vampires', runtime: 103, streaming_on_netflix: true)
+    mars = carpenter.films.create!(name: 'Ghosts of Mars', runtime: 98, streaming_on_netflix: false)
+
+    visit "/directors/#{carpenter.id}/films"
+  
+    click_link "Sort Films Alphabetically"
+
+    within "#film0" do
+      expect(page).to have_content('Ghosts of Mars')
+    end
+
+    within "#film1" do
+      expect(page).to have_content('Halloween')
+    end
+
+    within "#film2" do
+      expect(page).to have_content('Vampires')
+    end
+
+  end
 end
