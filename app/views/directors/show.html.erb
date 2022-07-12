@@ -5,4 +5,6 @@
   <p>Number of Films: <%= @director.film_count %></p>
   <p>Academy Awards: <%= @director.academy_awards%></p>
   <p>Deceased: <%= @director.deceased %></p>
-  <%= link_to "Films", "/directors/#{@director.id}/films" %>
+  <%= link_to "Films", "/directors/#{@director.id}/films" %></br>
+  </br>
+  <%= button_to "Delete", "/directors/#{@director.id}", method: :delete %> 
