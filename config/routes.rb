@@ -15,4 +15,5 @@ Rails.application.routes.draw do
   patch '/directors/:id', to: 'directors#update'
   patch '/films/:id', to: 'films#update'
   delete '/directors/:id', to: 'directors#destroy'
+  delete '/films/:id', to: 'films#destroy'
 end
