@@ -4,10 +4,6 @@ class Film < ApplicationRecord
   validates :streaming_on_netflix, inclusion: [true, false]
   belongs_to :director
 
-  def self.streaming_on_netflix?
-    streaming_on_netflix == true
-  end
-
   def self.sort_alphabetically
     order(:name)
   end  

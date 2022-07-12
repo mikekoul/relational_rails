@@ -96,7 +96,9 @@ RSpec.describe "Films show page", type: :feature do
 
     it "click button to delete film show page" do
       carpenter = Director.create!(name: "John Carpenter", academy_awards: 0, deceased: false)
+      toro = Director.create!(name: 'Guillermo del Toro', academy_awards: 6, deceased: false)
       vamps = carpenter.films.create!(name: 'Vampires', runtime: 103, streaming_on_netflix: true)
+      water = toro.films.create!(name: 'The Shape of Water', runtime: 123, streaming_on_netflix: true)
 
       visit "/films/#{vamps.id}"
 

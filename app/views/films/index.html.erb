@@ -3,7 +3,7 @@
 <h1>Films</h1>
 <% @films.each_with_index do |film, index| %>
 <div id="film<%= index %>">
-<% if film.streaming_on_netflix? %>
+<% if film.streaming_on_netflix %>
   <h3><%= film.name %><small><%= link_to "Edit", "/films/#{film.id}/edit", method: :get %></small></h3>
   <p>Runtime: <%= film.runtime%></p>
   <p>Streaming on Netflix: <%= film.streaming_on_netflix %></p>

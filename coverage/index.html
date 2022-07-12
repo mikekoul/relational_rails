@@ -14,7 +14,7 @@
       <img src="./assets/0.12.3/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" class="hide">
-      <div class="timestamp">Generated <abbr class="timeago" title="2022-07-11T21:52:22-06:00">2022-07-11T21:52:22-06:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2022-07-12T10:53:15-06:00">2022-07-12T10:53:15-06:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
@@ -23,7 +23,7 @@
     <span class="group_name">All Files</span>
     (<span class="covered_percent">
       <span class="green">
-  99.84%
+  100.0%
 </span>
 
      </span>
@@ -44,10 +44,10 @@
 
   <div class="t-line-summary">
     <b>619</b> relevant lines,
-    <span class="green"><b>618</b> lines covered</span> and
-    <span class="red"><b>1</b> lines missed. </span>
+    <span class="green"><b>619</b> lines covered</span> and
+    <span class="red"><b>0</b> lines missed. </span>
     (<span class="green">
-  99.84%
+  100.0%
 </span>
 )
   </div>
@@ -149,12 +149,12 @@
         
           <tr class="t-file">
             <td class="strong t-file__name"><a href="#e01e7e9d386c6dd6130f045b384be1a667051b35" class="src_link" title="app/models/film.rb">app/models/film.rb</a></td>
-            <td class="yellow strong cell--number t-file__coverage">88.89 %</td>
+            <td class="green strong cell--number t-file__coverage">100.00 %</td>
             <td class="cell--number">15</td>
-            <td class="cell--number">9</td>
-            <td class="cell--number">8</td>
-            <td class="cell--number">1</td>
-            <td class="cell--number">1.11</td>
+            <td class="cell--number">7</td>
+            <td class="cell--number">7</td>
+            <td class="cell--number">0</td>
+            <td class="cell--number">1.29</td>
             
           </tr>
         
@@ -392,9 +392,9 @@
           <tr class="t-file">
             <td class="strong t-file__name"><a href="#b83c4a7fbf999c4efdef79dba5885cd9fab3c847" class="src_link" title="spec/features/films/show_spec.rb">spec/features/films/show_spec.rb</a></td>
             <td class="green strong cell--number t-file__coverage">100.00 %</td>
-            <td class="cell--number">109</td>
-            <td class="cell--number">64</td>
-            <td class="cell--number">64</td>
+            <td class="cell--number">111</td>
+            <td class="cell--number">66</td>
+            <td class="cell--number">66</td>
             <td class="cell--number">0</td>
             <td class="cell--number">1.00</td>
             
@@ -1914,8 +1914,8 @@
   <div class="header">
     <h3>app/models/film.rb</h3>
     <h4>
-      <span class="yellow">
-  88.89%
+      <span class="green">
+  100.0%
 </span>
 
       lines covered
@@ -1924,9 +1924,9 @@
     
 
     <div class="t-line-summary">
-      <b>9</b> relevant lines.
-      <span class="green"><b>8</b> lines covered</span> and
-      <span class="red"><b>1</b> lines missed.</span>
+      <b>7</b> relevant lines.
+      <span class="green"><b>7</b> lines covered</span> and
+      <span class="red"><b>0</b> lines missed.</span>
     </div>
 
     
@@ -2003,24 +2003,24 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="7">
-            <span class="hits">1</span>
+          <li class="never" data-hits="" data-linenumber="7">
+            
             
 
             
 
-            <code class="ruby">  def self.streaming_on_netflix?</code>
+            <code class="ruby">  # def self.streaming_on_netflix?</code>
           </li>
         </div>
       
         <div>
-          <li class="missed" data-hits="0" data-linenumber="8">
+          <li class="never" data-hits="" data-linenumber="8">
             
             
 
             
 
-            <code class="ruby">    streaming_on_netflix == true</code>
+            <code class="ruby">  #   streaming_on_netflix == true</code>
           </li>
         </div>
       
@@ -2031,7 +2031,7 @@
 
             
 
-            <code class="ruby">  end</code>
+            <code class="ruby">  # end</code>
           </li>
         </div>
       
@@ -11846,8 +11846,8 @@
     
 
     <div class="t-line-summary">
-      <b>64</b> relevant lines.
-      <span class="green"><b>64</b> lines covered</span> and
+      <b>66</b> relevant lines.
+      <span class="green"><b>66</b> lines covered</span> and
       <span class="red"><b>0</b> lines missed.</span>
     </div>
 
@@ -12943,18 +12943,18 @@
 
             
 
-            <code class="ruby">      vamps = carpenter.films.create!(name: &#39;Vampires&#39;, runtime: 103, streaming_on_netflix: true)</code>
+            <code class="ruby">      toro = Director.create!(name: &#39;Guillermo del Toro&#39;, academy_awards: 6, deceased: false)</code>
           </li>
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="100">
-            
-            
-
+          <li class="covered" data-hits="1" data-linenumber="100">
+            <span class="hits">1</span>
             
 
-            <code class="ruby"></code>
+            
+
+            <code class="ruby">      vamps = carpenter.films.create!(name: &#39;Vampires&#39;, runtime: 103, streaming_on_netflix: true)</code>
           </li>
         </div>
       
@@ -12965,7 +12965,7 @@
 
             
 
-            <code class="ruby">      visit &quot;/films/#{vamps.id}&quot;</code>
+            <code class="ruby">      water = toro.films.create!(name: &#39;The Shape of Water&#39;, runtime: 123, streaming_on_netflix: true)</code>
           </li>
         </div>
       
@@ -12987,7 +12987,7 @@
 
             
 
-            <code class="ruby">      click_button(&#39;Delete&#39;)</code>
+            <code class="ruby">      visit &quot;/films/#{vamps.id}&quot;</code>
           </li>
         </div>
       
@@ -13009,12 +13009,34 @@
 
             
 
+            <code class="ruby">      click_button(&#39;Delete&#39;)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="106">
+            
+            
+
+            
+
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="107">
+            <span class="hits">1</span>
+            
+
+            
+
             <code class="ruby">      expect(current_path).to eq(&quot;/films&quot;)</code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="106">
+          <li class="covered" data-hits="1" data-linenumber="108">
             <span class="hits">1</span>
             
 
@@ -13025,7 +13047,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="107">
+          <li class="never" data-hits="" data-linenumber="109">
             
             
 
@@ -13036,7 +13058,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="108">
+          <li class="never" data-hits="" data-linenumber="110">
             
             
 
@@ -13047,7 +13069,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="109">
+          <li class="never" data-hits="" data-linenumber="111">
             
             
 
@@ -13797,7 +13819,7 @@
 
             
 
-            <code class="ruby">      expect(shining.streaming_on_netflix?).to eq(true)</code>
+            <code class="ruby">      expect(shining.streaming_on_netflix).to eq(true)</code>
           </li>
         </div>
       
@@ -13808,7 +13830,7 @@
 
             
 
-            <code class="ruby">      expect(halloween.streaming_on_netflix?).to eq(false)</code>
+            <code class="ruby">      expect(halloween.streaming_on_netflix).to eq(false)</code>
           </li>
         </div>
       
@@ -13819,7 +13841,7 @@
 
             
 
-            <code class="ruby">      expect(peak.streaming_on_netflix?).to eq(false)</code>
+            <code class="ruby">      expect(peak.streaming_on_netflix).to eq(false)</code>
           </li>
         </div>
       
@@ -13830,7 +13852,7 @@
 
             
 
-            <code class="ruby">      expect(water.streaming_on_netflix?).to eq(true)</code>
+            <code class="ruby">      expect(water.streaming_on_netflix).to eq(true)</code>
           </li>
         </div>
       
