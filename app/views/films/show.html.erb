@@ -3,4 +3,6 @@
 <h1><%= @film.name %></h1>
 <p>Runtime: <%= @film.runtime%></p>
 <p>Streaming on Netflix: <%= @film.streaming_on_netflix %></p>
-<%= link_to "Update Film", "/films/#{@film.id}/edit", method: :get %>
+<%= link_to "Update Film", "/films/#{@film.id}/edit", method: :get %></br>
+</br>
+<%= button_to "Delete", "/films/#{@film.id}", method: :delete %> 

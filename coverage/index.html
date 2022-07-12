@@ -14,7 +14,7 @@
       <img src="./assets/0.12.3/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" class="hide">
-      <div class="timestamp">Generated <abbr class="timeago" title="2022-07-11T19:12:43-06:00">2022-07-11T19:12:43-06:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2022-07-11T21:52:22-06:00">2022-07-11T21:52:22-06:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
@@ -23,7 +23,7 @@
     <span class="group_name">All Files</span>
     (<span class="covered_percent">
       <span class="green">
-  99.83%
+  99.84%
 </span>
 
      </span>
@@ -43,11 +43,11 @@
   </div>
 
   <div class="t-line-summary">
-    <b>603</b> relevant lines,
-    <span class="green"><b>602</b> lines covered</span> and
+    <b>619</b> relevant lines,
+    <span class="green"><b>618</b> lines covered</span> and
     <span class="red"><b>1</b> lines missed. </span>
     (<span class="green">
-  99.83%
+  99.84%
 </span>
 )
   </div>
@@ -106,11 +106,11 @@
           <tr class="t-file">
             <td class="strong t-file__name"><a href="#eff675467deb78baaab09bf1990587dd42d0d412" class="src_link" title="app/controllers/films_controller.rb">app/controllers/films_controller.rb</a></td>
             <td class="green strong cell--number t-file__coverage">100.00 %</td>
-            <td class="cell--number">24</td>
-            <td class="cell--number">14</td>
-            <td class="cell--number">14</td>
+            <td class="cell--number">29</td>
+            <td class="cell--number">17</td>
+            <td class="cell--number">17</td>
             <td class="cell--number">0</td>
-            <td class="cell--number">2.93</td>
+            <td class="cell--number">2.76</td>
             
           </tr>
         
@@ -304,9 +304,9 @@
           <tr class="t-file">
             <td class="strong t-file__name"><a href="#235ca8b9ea8ea127a1f95cce446b4d902f2c1611" class="src_link" title="config/routes.rb">config/routes.rb</a></td>
             <td class="green strong cell--number t-file__coverage">100.00 %</td>
-            <td class="cell--number">18</td>
-            <td class="cell--number">15</td>
-            <td class="cell--number">15</td>
+            <td class="cell--number">19</td>
+            <td class="cell--number">16</td>
+            <td class="cell--number">16</td>
             <td class="cell--number">0</td>
             <td class="cell--number">1.00</td>
             
@@ -360,8 +360,8 @@
             <td class="strong t-file__name"><a href="#cf788fa06947117731ff47f23971b442af351b8a" class="src_link" title="spec/features/directors/show_spec.rb">spec/features/directors/show_spec.rb</a></td>
             <td class="green strong cell--number t-file__coverage">100.00 %</td>
             <td class="cell--number">145</td>
-            <td class="cell--number">88</td>
-            <td class="cell--number">88</td>
+            <td class="cell--number">87</td>
+            <td class="cell--number">87</td>
             <td class="cell--number">0</td>
             <td class="cell--number">1.00</td>
             
@@ -392,9 +392,9 @@
           <tr class="t-file">
             <td class="strong t-file__name"><a href="#b83c4a7fbf999c4efdef79dba5885cd9fab3c847" class="src_link" title="spec/features/films/show_spec.rb">spec/features/films/show_spec.rb</a></td>
             <td class="green strong cell--number t-file__coverage">100.00 %</td>
-            <td class="cell--number">86</td>
-            <td class="cell--number">51</td>
-            <td class="cell--number">51</td>
+            <td class="cell--number">109</td>
+            <td class="cell--number">64</td>
+            <td class="cell--number">64</td>
             <td class="cell--number">0</td>
             <td class="cell--number">1.00</td>
             
@@ -1272,8 +1272,8 @@
     
 
     <div class="t-line-summary">
-      <b>14</b> relevant lines.
-      <span class="green"><b>14</b> lines covered</span> and
+      <b>17</b> relevant lines.
+      <span class="green"><b>17</b> lines covered</span> and
       <span class="red"><b>0</b> lines missed.</span>
     </div>
 
@@ -1307,8 +1307,8 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="13" data-linenumber="3">
-            <span class="hits">13</span>
+          <li class="covered" data-hits="14" data-linenumber="3">
+            <span class="hits">14</span>
             
 
             
@@ -1351,8 +1351,8 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="10" data-linenumber="7">
-            <span class="hits">10</span>
+          <li class="covered" data-hits="12" data-linenumber="7">
+            <span class="hits">12</span>
             
 
             
@@ -1500,7 +1500,7 @@
 
             
 
-            <code class="ruby">private</code>
+            <code class="ruby">  def destroy</code>
           </li>
         </div>
       
@@ -1511,7 +1511,7 @@
 
             
 
-            <code class="ruby">  def film_params</code>
+            <code class="ruby">    Film.destroy(params[:id])</code>
           </li>
         </div>
       
@@ -1522,7 +1522,7 @@
 
             
 
-            <code class="ruby">    params.permit(:name, :runtime, :streaming_on_netflix)</code>
+            <code class="ruby">    redirect_to &quot;/films&quot;</code>
           </li>
         </div>
       
@@ -1539,6 +1539,61 @@
       
         <div>
           <li class="never" data-hits="" data-linenumber="24">
+            
+            
+
+            
+
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="25">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">private</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="26">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">  def film_params</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="27">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">    params.permit(:name, :runtime, :streaming_on_netflix)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="28">
+            
+            
+
+            
+
+            <code class="ruby">  end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="29">
             
             
 
@@ -4503,8 +4558,8 @@
     
 
     <div class="t-line-summary">
-      <b>15</b> relevant lines.
-      <span class="green"><b>15</b> lines covered</span> and
+      <b>16</b> relevant lines.
+      <span class="green"><b>16</b> lines covered</span> and
       <span class="red"><b>0</b> lines missed.</span>
     </div>
 
@@ -4703,7 +4758,18 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="18">
+          <li class="covered" data-hits="1" data-linenumber="18">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">  delete &#39;/films/:id&#39;, to: &#39;films#destroy&#39;</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="19">
             
             
 
@@ -8585,8 +8651,8 @@
     
 
     <div class="t-line-summary">
-      <b>88</b> relevant lines.
-      <span class="green"><b>88</b> lines covered</span> and
+      <b>87</b> relevant lines.
+      <span class="green"><b>87</b> lines covered</span> and
       <span class="red"><b>0</b> lines missed.</span>
     </div>
 
@@ -10127,13 +10193,13 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="140">
-            <span class="hits">1</span>
+          <li class="never" data-hits="" data-linenumber="140">
+            
             
 
             
 
-            <code class="ruby">      save_and_open_page</code>
+            <code class="ruby">      </code>
           </li>
         </div>
       
@@ -11780,8 +11846,8 @@
     
 
     <div class="t-line-summary">
-      <b>51</b> relevant lines.
-      <span class="green"><b>51</b> lines covered</span> and
+      <b>64</b> relevant lines.
+      <span class="green"><b>64</b> lines covered</span> and
       <span class="red"><b>0</b> lines missed.</span>
     </div>
 
@@ -12206,7 +12272,7 @@
 
             
 
-            <code class="ruby">  it &quot;has link to director index&quot; do</code>
+            <code class="ruby">  describe &quot;#film show page links&quot; do</code>
           </li>
         </div>
       
@@ -12217,7 +12283,7 @@
 
             
 
-            <code class="ruby">    carpenter = Director.create!(name: &quot;John Carpenter&quot;, academy_awards: 0, deceased: false)</code>
+            <code class="ruby">    it &quot;has link to director index&quot; do</code>
           </li>
         </div>
       
@@ -12228,12 +12294,23 @@
 
             
 
-            <code class="ruby">    vamps = carpenter.films.create!(name: &#39;Vampires&#39;, runtime: 103, streaming_on_netflix: true)</code>
+            <code class="ruby">      carpenter = Director.create!(name: &quot;John Carpenter&quot;, academy_awards: 0, deceased: false)</code>
           </li>
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="41">
+          <li class="covered" data-hits="1" data-linenumber="41">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">      vamps = carpenter.films.create!(name: &#39;Vampires&#39;, runtime: 103, streaming_on_netflix: true)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="42">
             
             
 
@@ -12244,18 +12321,18 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="42">
+          <li class="covered" data-hits="1" data-linenumber="43">
             <span class="hits">1</span>
             
 
             
 
-            <code class="ruby">    visit &quot;/films/#{vamps.id}&quot;</code>
+            <code class="ruby">      visit &quot;/films/#{vamps.id}&quot;</code>
           </li>
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="43">
+          <li class="never" data-hits="" data-linenumber="44">
             
             
 
@@ -12266,24 +12343,13 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="44">
+          <li class="covered" data-hits="1" data-linenumber="45">
             <span class="hits">1</span>
             
 
             
 
-            <code class="ruby">    expect(page).to have_link(&#39;Director Index&#39;)</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="45">
-            
-            
-
-            
-
-            <code class="ruby">  end</code>
+            <code class="ruby">      expect(page).to have_link(&#39;Director Index&#39;)</code>
           </li>
         </div>
       
@@ -12294,18 +12360,18 @@
 
             
 
-            <code class="ruby"></code>
+            <code class="ruby">    end</code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="47">
-            <span class="hits">1</span>
+          <li class="never" data-hits="" data-linenumber="47">
+            
             
 
             
 
-            <code class="ruby">  it &quot;click director index link and go to director index page&quot; do</code>
+            <code class="ruby"></code>
           </li>
         </div>
       
@@ -12316,7 +12382,7 @@
 
             
 
-            <code class="ruby">    carpenter = Director.create!(name: &quot;John Carpenter&quot;, academy_awards: 0, deceased: false)</code>
+            <code class="ruby">    it &quot;click director index link and go to director index page&quot; do</code>
           </li>
         </div>
       
@@ -12327,12 +12393,23 @@
 
             
 
-            <code class="ruby">    vamps = carpenter.films.create!(name: &#39;Vampires&#39;, runtime: 103, streaming_on_netflix: true)</code>
+            <code class="ruby">      carpenter = Director.create!(name: &quot;John Carpenter&quot;, academy_awards: 0, deceased: false)</code>
           </li>
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="50">
+          <li class="covered" data-hits="1" data-linenumber="50">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">      vamps = carpenter.films.create!(name: &#39;Vampires&#39;, runtime: 103, streaming_on_netflix: true)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="51">
             
             
 
@@ -12343,18 +12420,18 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="51">
+          <li class="covered" data-hits="1" data-linenumber="52">
             <span class="hits">1</span>
             
 
             
 
-            <code class="ruby">    visit &quot;/films/#{vamps.id}&quot;</code>
+            <code class="ruby">      visit &quot;/films/#{vamps.id}&quot;</code>
           </li>
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="52">
+          <li class="never" data-hits="" data-linenumber="53">
             
             
 
@@ -12365,18 +12442,18 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="53">
+          <li class="covered" data-hits="1" data-linenumber="54">
             <span class="hits">1</span>
             
 
             
 
-            <code class="ruby">    click_link(&#39;Director Index&#39;)</code>
+            <code class="ruby">      click_link(&#39;Director Index&#39;)</code>
           </li>
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="54">
+          <li class="never" data-hits="" data-linenumber="55">
             
             
 
@@ -12387,24 +12464,13 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="55">
+          <li class="covered" data-hits="1" data-linenumber="56">
             <span class="hits">1</span>
             
 
             
 
-            <code class="ruby">    expect(current_path).to eq(&quot;/directors&quot;)</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="56">
-            
-            
-
-            
-
-            <code class="ruby">  end</code>
+            <code class="ruby">      expect(current_path).to eq(&quot;/directors&quot;)</code>
           </li>
         </div>
       
@@ -12415,18 +12481,18 @@
 
             
 
-            <code class="ruby"></code>
+            <code class="ruby">    end</code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="58">
-            <span class="hits">1</span>
+          <li class="never" data-hits="" data-linenumber="58">
+            
             
 
             
 
-            <code class="ruby">  it &quot;has link to films index&quot; do</code>
+            <code class="ruby"></code>
           </li>
         </div>
       
@@ -12437,7 +12503,7 @@
 
             
 
-            <code class="ruby">    carpenter = Director.create!(name: &quot;John Carpenter&quot;, academy_awards: 0, deceased: false)</code>
+            <code class="ruby">    it &quot;has link to films index&quot; do</code>
           </li>
         </div>
       
@@ -12448,12 +12514,23 @@
 
             
 
-            <code class="ruby">    mars = carpenter.films.create!(name: &#39;Ghosts of Mars&#39;, runtime: 98, streaming_on_netflix: false)</code>
+            <code class="ruby">      carpenter = Director.create!(name: &quot;John Carpenter&quot;, academy_awards: 0, deceased: false)</code>
           </li>
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="61">
+          <li class="covered" data-hits="1" data-linenumber="61">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">      mars = carpenter.films.create!(name: &#39;Ghosts of Mars&#39;, runtime: 98, streaming_on_netflix: false)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="62">
             
             
 
@@ -12464,18 +12541,18 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="62">
+          <li class="covered" data-hits="1" data-linenumber="63">
             <span class="hits">1</span>
             
 
             
 
-            <code class="ruby">    visit &quot;/films/#{mars.id}&quot;</code>
+            <code class="ruby">      visit &quot;/films/#{mars.id}&quot;</code>
           </li>
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="63">
+          <li class="never" data-hits="" data-linenumber="64">
             
             
 
@@ -12486,24 +12563,13 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="64">
+          <li class="covered" data-hits="1" data-linenumber="65">
             <span class="hits">1</span>
             
 
             
 
-            <code class="ruby">    expect(page).to have_link(&#39;Film Index&#39;)</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="65">
-            
-            
-
-            
-
-            <code class="ruby">  end</code>
+            <code class="ruby">      expect(page).to have_link(&#39;Film Index&#39;)</code>
           </li>
         </div>
       
@@ -12514,18 +12580,18 @@
 
             
 
-            <code class="ruby"></code>
+            <code class="ruby">    end</code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="67">
-            <span class="hits">1</span>
+          <li class="never" data-hits="" data-linenumber="67">
+            
             
 
             
 
-            <code class="ruby">  it &quot;click film index link and go to film index page&quot; do</code>
+            <code class="ruby"></code>
           </li>
         </div>
       
@@ -12536,7 +12602,7 @@
 
             
 
-            <code class="ruby">    carpenter = Director.create!(name: &quot;John Carpenter&quot;, academy_awards: 0, deceased: false)</code>
+            <code class="ruby">    it &quot;click film index link and go to film index page&quot; do</code>
           </li>
         </div>
       
@@ -12547,12 +12613,23 @@
 
             
 
-            <code class="ruby">    mars = carpenter.films.create!(name: &#39;Ghosts of Mars&#39;, runtime: 98, streaming_on_netflix: false)</code>
+            <code class="ruby">      carpenter = Director.create!(name: &quot;John Carpenter&quot;, academy_awards: 0, deceased: false)</code>
           </li>
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="70">
+          <li class="covered" data-hits="1" data-linenumber="70">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">      mars = carpenter.films.create!(name: &#39;Ghosts of Mars&#39;, runtime: 98, streaming_on_netflix: false)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="71">
             
             
 
@@ -12563,18 +12640,18 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="71">
+          <li class="covered" data-hits="1" data-linenumber="72">
             <span class="hits">1</span>
             
 
             
 
-            <code class="ruby">    visit &quot;/films/#{mars.id}&quot;</code>
+            <code class="ruby">      visit &quot;/films/#{mars.id}&quot;</code>
           </li>
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="72">
+          <li class="never" data-hits="" data-linenumber="73">
             
             
 
@@ -12585,18 +12662,18 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="73">
+          <li class="covered" data-hits="1" data-linenumber="74">
             <span class="hits">1</span>
             
 
             
 
-            <code class="ruby">    click_link(&#39;Film Index&#39;)</code>
+            <code class="ruby">      click_link(&#39;Film Index&#39;)</code>
           </li>
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="74">
+          <li class="never" data-hits="" data-linenumber="75">
             
             
 
@@ -12607,24 +12684,13 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="75">
+          <li class="covered" data-hits="1" data-linenumber="76">
             <span class="hits">1</span>
             
 
             
 
-            <code class="ruby">    expect(current_path).to eq(&quot;/films&quot;)</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="76">
-            
-            
-
-            
-
-            <code class="ruby">  end</code>
+            <code class="ruby">      expect(current_path).to eq(&quot;/films&quot;)</code>
           </li>
         </div>
       
@@ -12635,18 +12701,18 @@
 
             
 
-            <code class="ruby"></code>
+            <code class="ruby">    end</code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="78">
-            <span class="hits">1</span>
+          <li class="never" data-hits="" data-linenumber="78">
+            
             
 
             
 
-            <code class="ruby">  it &quot;has link to film update page&quot; do</code>
+            <code class="ruby"></code>
           </li>
         </div>
       
@@ -12657,7 +12723,7 @@
 
             
 
-            <code class="ruby">    carpenter = Director.create!(name: &quot;John Carpenter&quot;, academy_awards: 0, deceased: false)</code>
+            <code class="ruby">    it &quot;has link to film update page&quot; do</code>
           </li>
         </div>
       
@@ -12668,12 +12734,23 @@
 
             
 
-            <code class="ruby">    vamps = carpenter.films.create!(name: &#39;Vampires&#39;, runtime: 103, streaming_on_netflix: true)</code>
+            <code class="ruby">      carpenter = Director.create!(name: &quot;John Carpenter&quot;, academy_awards: 0, deceased: false)</code>
           </li>
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="81">
+          <li class="covered" data-hits="1" data-linenumber="81">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">      vamps = carpenter.films.create!(name: &#39;Vampires&#39;, runtime: 103, streaming_on_netflix: true)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="82">
             
             
 
@@ -12684,18 +12761,18 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="82">
+          <li class="covered" data-hits="1" data-linenumber="83">
             <span class="hits">1</span>
             
 
             
 
-            <code class="ruby">    visit &quot;/films/#{vamps.id}&quot;</code>
+            <code class="ruby">      visit &quot;/films/#{vamps.id}&quot;</code>
           </li>
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="83">
+          <li class="never" data-hits="" data-linenumber="84">
             
             
 
@@ -12706,18 +12783,260 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="84">
+          <li class="covered" data-hits="1" data-linenumber="85">
             <span class="hits">1</span>
             
 
             
 
-            <code class="ruby">    expect(page).to have_link(&#39;Update Film&#39;)</code>
+            <code class="ruby">      expect(page).to have_link(&#39;Update Film&#39;)</code>
           </li>
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="85">
+          <li class="never" data-hits="" data-linenumber="86">
+            
+            
+
+            
+
+            <code class="ruby">    end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="87">
+            
+            
+
+            
+
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="88">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">    it &quot;has button to delete film show page&quot; do</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="89">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">      carpenter = Director.create!(name: &quot;John Carpenter&quot;, academy_awards: 0, deceased: false)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="90">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">      vamps = carpenter.films.create!(name: &#39;Vampires&#39;, runtime: 103, streaming_on_netflix: true)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="91">
+            
+            
+
+            
+
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="92">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">      visit &quot;/films/#{vamps.id}&quot;</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="93">
+            
+            
+
+            
+
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="94">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">      expect(page).to have_button(&#39;Delete&#39;)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="95">
+            
+            
+
+            
+
+            <code class="ruby">    end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="96">
+            
+            
+
+            
+
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="97">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">    it &quot;click button to delete film show page&quot; do</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="98">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">      carpenter = Director.create!(name: &quot;John Carpenter&quot;, academy_awards: 0, deceased: false)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="99">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">      vamps = carpenter.films.create!(name: &#39;Vampires&#39;, runtime: 103, streaming_on_netflix: true)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="100">
+            
+            
+
+            
+
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="101">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">      visit &quot;/films/#{vamps.id}&quot;</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="102">
+            
+            
+
+            
+
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="103">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">      click_button(&#39;Delete&#39;)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="104">
+            
+            
+
+            
+
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="105">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">      expect(current_path).to eq(&quot;/films&quot;)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="106">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">      expect(page).to_not have_content(vamps.name)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="107">
+            
+            
+
+            
+
+            <code class="ruby">    end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="108">
             
             
 
@@ -12728,7 +13047,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="86">
+          <li class="never" data-hits="" data-linenumber="109">
             
             
 
