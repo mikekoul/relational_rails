@@ -42,7 +42,8 @@ RSpec.describe "Directors show page", type: :feature do
 
       expect(page).to have_content("Number of Films: 3")
     end
-
+  end  
+  describe "director show page links" do  
     it "has link to director index" do
       carpenter = Director.create!(name: "John Carpenter", academy_awards: 0, deceased: false)
 
@@ -111,6 +112,34 @@ RSpec.describe "Directors show page", type: :feature do
     visit "/directors/#{kubrick.id}"
 
     expect(page).to have_link("Update")
+    end
+
+    it 'has link to Delete director show page' do
+      toro = Director.create!(name: 'Guillermo del Toro', academy_awards: 6, deceased: false)
+      pans = toro.films.create!(name: 'Pans Labyrinth', runtime: 110, streaming_on_netflix: false)
+      peak = toro.films.create!(name: 'Crimson Peak', runtime: 119, streaming_on_netflix: false)
+      water = toro.films.create!(name: 'The Shape of Water', runtime: 123, streaming_on_netflix: true)
+
+      visit "/directors/#{toro.id}"
+
+      expect(page).to have_button("Delete")
+    end
+
+    it 'click delete button to delete director show page' do
+      kubrick = Director.create!(name: 'Stanley Kubrick', academy_awards: 13, deceased: true)
+      carpenter = Director.create!(name: 'John Carpenter', academy_awards: 0, deceased: false)
+      jackson = Director.create!(name: 'Peter Jackson', academy_awards: 9, deceased: false)
+      toro = Director.create!(name: 'Guillermo del Toro', academy_awards: 6, deceased: false)
+      pans = toro.films.create!(name: 'Pans Labyrinth', runtime: 110, streaming_on_netflix: false)
+      peak = toro.films.create!(name: 'Crimson Peak', runtime: 119, streaming_on_netflix: false)
+      water = toro.films.create!(name: 'The Shape of Water', runtime: 123, streaming_on_netflix: true)
+
+      visit "/directors/#{toro.id}"
+
+      click_button("Delete")
+      
+      expect(current_path).to eq("/directors")
+      expect(page).to_not have_content(toro.name)
     end
   end
 end

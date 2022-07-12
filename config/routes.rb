@@ -14,4 +14,5 @@ Rails.application.routes.draw do
   post '/directors/:director_id/films', to: 'director_films#create'
   patch '/directors/:id', to: 'directors#update'
   patch '/films/:id', to: 'films#update'
+  delete '/directors/:id', to: 'directors#destroy'
 end
