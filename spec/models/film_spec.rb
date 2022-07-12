@@ -23,10 +23,10 @@ RSpec.describe Film, type: :model do
       peak = toro.films.create!(name: 'Crimson Peak', runtime: 119, streaming_on_netflix: false)
       water = toro.films.create!(name: 'The Shape of Water', runtime: 123, streaming_on_netflix: true)
 
-      expect(shining.streaming_on_netflix?).to eq(true)
-      expect(halloween.streaming_on_netflix?).to eq(false)
-      expect(peak.streaming_on_netflix?).to eq(false)
-      expect(water.streaming_on_netflix?).to eq(true)
+      expect(shining.streaming_on_netflix).to eq(true)
+      expect(halloween.streaming_on_netflix).to eq(false)
+      expect(peak.streaming_on_netflix).to eq(false)
+      expect(water.streaming_on_netflix).to eq(true)
     end
 
     it 'sort film names alphabetically' do
