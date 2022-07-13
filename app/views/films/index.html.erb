@@ -7,6 +7,7 @@
   <h3><%= film.name %><small><%= link_to "Edit", "/films/#{film.id}/edit", method: :get %></small></h3>
   <p>Runtime: <%= film.runtime%></p>
   <p>Streaming on Netflix: <%= film.streaming_on_netflix %></p>
+<%= button_to "Delete", "/films/#{film.id}", method: :delete %>
 </div>
 <% end %>
 <% end %>

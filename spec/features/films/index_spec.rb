@@ -103,5 +103,63 @@ RSpec.describe 'Films index' do
         expect(current_path).to eq("/films/#{water.id}/edit")
       end
     end
+
+    it 'has button to delete films' do
+      kubrick = Director.create!(name: 'Stanley Kubrick', academy_awards: 13, deceased: true)
+      carpenter = Director.create!(name: 'John Carpenter', academy_awards: 0, deceased: false)
+      shining = kubrick.films.create!(name: 'The Shining', runtime: 146, streaming_on_netflix: true)
+      fmj = kubrick.films.create!(name: 'Full Metal Jacket', runtime: 116, streaming_on_netflix: true)
+      vamps = carpenter.films.create!(name: 'Vampires', runtime: 103, streaming_on_netflix: true)
+
+      visit "/films"
+
+      within "#film0" do
+
+        expect(page).to have_button("Delete")
+      end
+
+      within "#film1" do
+
+        expect(page).to have_button("Delete")
+      end
+
+      within "#film2" do
+
+        expect(page).to have_button("Delete")
+      end
+    end
+
+    it 'click button and delete films' do
+      kubrick = Director.create!(name: 'Stanley Kubrick', academy_awards: 13, deceased: true)
+      carpenter = Director.create!(name: 'John Carpenter', academy_awards: 0, deceased: false)
+      shining = kubrick.films.create!(name: 'The Shining', runtime: 146, streaming_on_netflix: true)
+      fmj = kubrick.films.create!(name: 'Full Metal Jacket', runtime: 116, streaming_on_netflix: true)
+      vamps = carpenter.films.create!(name: 'Vampires', runtime: 103, streaming_on_netflix: true)
+
+      visit "/films"
+
+      within "#film0" do
+
+        expect(page).to have_button("Delete")
+      end
+
+      within "#film1" do
+
+        expect(page).to have_button("Delete")
+
+        click_button('Delete')
+
+        expect(current_path).to eq("/films")
+      end
+
+      within "#film1" do
+
+        expect(page).to have_button("Delete")
+      end
+
+      expect(page).to have_content("The Shining")
+      expect(page).to have_content("Vampires")
+      expect(page).to_not have_content("Full Metal Jacket")
+    end
   end
 end
