@@ -11,4 +11,8 @@ class Director < ApplicationRecord
   def film_count
     self.films.count
   end
+
+  def film_runtimes_greater_than(input_runtime)
+    self.films.where("runtime > ?", input_runtime)
+  end
 end

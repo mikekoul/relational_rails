@@ -19,8 +19,6 @@ RSpec.describe 'Director creation' do
     
     click_button("Create Director")
 
-    new_director_id = Director.last.id
-
     expect(current_path).to eq("/directors")
     expect(page).to have_content("Peter Jackson")
   end

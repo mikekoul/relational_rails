@@ -99,7 +99,7 @@ RSpec.describe "Director films index", type: :feature do
     end
   end
 
-    it 'has link to edit each film' do
+  it 'has link to edit each film' do
     kubrick = Director.create!(name: 'Stanley Kubrick', academy_awards: 13, deceased: true)
     shining = kubrick.films.create!(name: 'The Shining', runtime: 146, streaming_on_netflix: true)
     fmj = kubrick.films.create!(name: 'Full Metal Jacket', runtime: 116, streaming_on_netflix: true)
@@ -134,5 +134,26 @@ RSpec.describe "Director films index", type: :feature do
 
       expect(current_path).to eq("/films/#{orange.id}/edit")
     end
+  end
+
+  it 'has a form to return films over a given thereshold' do
+    kubrick = Director.create!(name: 'Stanley Kubrick', academy_awards: 13, deceased: true)
+    shining = kubrick.films.create!(name: 'The Shining', runtime: 146, streaming_on_netflix: true)
+    fmj = kubrick.films.create!(name: 'Full Metal Jacket', runtime: 116, streaming_on_netflix: true)
+    orange = kubrick.films.create!(name: 'A Clockwork Orange', runtime: 136, streaming_on_netflix: false)
+
+    visit "/directors/#{kubrick.id}/films"
+
+    expect(page).to have_content("Full Metal Jacket")
+
+    visit "/directors/#{kubrick.id}/films" 
+  
+    fill_in('film_runtimes_greater_than', with: '120')
+
+    click_button('Search')
+
+    expect(current_path).to eq("/directors/#{kubrick.id}/films")
+    expect(page).to have_content("The Shining")
+    expect(page).to_not have_content("Full Metal Jacket")
   end
 end
