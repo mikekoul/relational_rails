@@ -156,4 +156,52 @@ RSpec.describe "Director films index", type: :feature do
     expect(page).to have_content("The Shining")
     expect(page).to_not have_content("Full Metal Jacket")
   end
+
+  it 'has a delete button next to every film' do
+    jackson = Director.create!(name: 'Peter Jackson', academy_awards: 9, deceased: false)
+    hobbit = jackson.films.create!(name: 'The Hobbit', runtime: 169, streaming_on_netflix: true)
+    kong = jackson.films.create!(name: 'King Kong', runtime: 201, streaming_on_netflix: true)
+    rings = jackson.films.create!(name: 'Lord of the Rings', runtime: 178, streaming_on_netflix: true)
+
+    visit "/directors/#{jackson.id}/films"
+
+    within "#film0" do
+
+      expect(page).to have_button("Delete")
+    end
+
+    within "#film1" do
+
+      expect(page).to have_button("Delete")
+    end
+
+    within "#film2" do
+
+      expect(page).to have_button("Delete")
+    end
+  end
+
+  it 'click button and delete films' do
+    jackson = Director.create!(name: 'Peter Jackson', academy_awards: 9, deceased: false)
+    hobbit = jackson.films.create!(name: 'The Hobbit', runtime: 169, streaming_on_netflix: true)
+    kong = jackson.films.create!(name: 'King Kong', runtime: 201, streaming_on_netflix: true)
+    rings = jackson.films.create!(name: 'Lord of the Rings', runtime: 178, streaming_on_netflix: true)
+
+    visit "/directors/#{jackson.id}/films"
+
+    within "#film1" do
+
+      expect(page).to have_button("Delete")
+
+      click_button('Delete')
+
+      expect(current_path).to eq("/films")
+    end
+
+    visit "/films"
+
+    expect(page).to have_content('The Hobbit')
+    expect(page).to have_content('Lord of the Rings')
+    expect(page).to_not have_content('King Kong')
+  end
 end
