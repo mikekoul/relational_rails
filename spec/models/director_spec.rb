@@ -32,5 +32,15 @@ RSpec.describe Director, type: :model do
 
       expect(carpenter.film_count).to eq(3)
     end
+
+    it 'return films with runtime greater than x' do
+      carpenter = Director.create!(name: "John Carpenter", academy_awards: 0, deceased: false)
+      halloween = carpenter.films.create!(name: 'Halloween', runtime: 91, streaming_on_netflix: false)
+      vamps = carpenter.films.create!(name: 'Vampires', runtime: 103, streaming_on_netflix: true)
+      mars = carpenter.films.create!(name: 'Ghosts of Mars', runtime: 98, streaming_on_netflix: false)
+      input_runtime = 95
+
+      expect(carpenter.film_runtimes_greater_than(input_runtime)).to eq([vamps, mars])
+    end
   end
 end
