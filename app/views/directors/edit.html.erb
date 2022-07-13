@@ -4,7 +4,7 @@
   <%= form.label :academy_awards %></br>
   <%= form.text_field :academy_awards %></br>
   <%= form.label :deceased  %></br>
-  <%= form.text_field :deceased %></br>
+  <%= form.select :deceased, options_for_select([false, true]) %><br/>
   </br>
   <%= form.submit "Update Director" %>
 <% end %>

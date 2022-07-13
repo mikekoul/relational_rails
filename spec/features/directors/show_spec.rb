@@ -43,7 +43,8 @@ RSpec.describe "Directors show page", type: :feature do
       expect(page).to have_content("Number of Films: 3")
     end
   end  
-  describe "director show page links" do  
+
+  describe "#director show page links" do  
     it "has link to director index" do
       carpenter = Director.create!(name: "John Carpenter", academy_awards: 0, deceased: false)
 
@@ -106,14 +107,16 @@ RSpec.describe "Directors show page", type: :feature do
       expect(current_path).to eq("/directors/#{jackson.id}/films")
     end
 
-    it 'has link to Update director show page' do
+    it 'has link to update director show page' do
       kubrick = Director.create!(name: "Stanley Kubrick", academy_awards: 13, deceased: true)
 
     visit "/directors/#{kubrick.id}"
 
-    expect(page).to have_link("Update")
+      expect(page).to have_link("Update")
     end
+  end
 
+  describe "#deleting an existing director" do
     it 'has link to delete director show page' do
       toro = Director.create!(name: 'Guillermo del Toro', academy_awards: 6, deceased: false)
       pans = toro.films.create!(name: 'Pans Labyrinth', runtime: 110, streaming_on_netflix: false)

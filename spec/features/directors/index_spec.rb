@@ -1,46 +1,48 @@
 require 'rails_helper'
 
 RSpec.describe "directors index page", type: :feature do
-  it "can see names of all directors" do
-    kubrick = Director.create!(name: "Stanley Kubrick", academy_awards: 13, deceased: true)
-    carpenter = Director.create!(name: "John Carpenter", academy_awards: 0, deceased: false)
-    jackson = Director.create!(name: "Peter Jackson", academy_awards: 9, deceased: false)
-    toro = Director.create!(name: "Guillermo del Toro", academy_awards: 6, deceased: false)
+  describe "#what the user sees" do
+    it "can see names of all directors" do
+      kubrick = Director.create!(name: "Stanley Kubrick", academy_awards: 13, deceased: true)
+      carpenter = Director.create!(name: "John Carpenter", academy_awards: 0, deceased: false)
+      jackson = Director.create!(name: "Peter Jackson", academy_awards: 9, deceased: false)
+      toro = Director.create!(name: "Guillermo del Toro", academy_awards: 6, deceased: false)
 
-    visit "/directors"
+      visit "/directors"
 
-    expect(page).to have_content("Stanley Kubrick")
-    expect(page).to have_content("John Carpenter")
-    expect(page).to have_content("Peter Jackson")
-    expect(page).to have_content("Guillermo del Toro")
-  end
-
-  it "displays directors by most recently created" do
-    kubrick = Director.create!(name: "Stanley Kubrick", academy_awards: 13, deceased: true)
-    carpenter = Director.create!(name: "John Carpenter", academy_awards: 0, deceased: false)
-    jackson = Director.create!(name: "Peter Jackson", academy_awards: 9, deceased: false)
-    toro = Director.create!(name: "Guillermo del Toro", academy_awards: 6, deceased: false)
-
-    visit "/directors"
-
-    within "#director0" do
+      expect(page).to have_content("Stanley Kubrick")
+      expect(page).to have_content("John Carpenter")
+      expect(page).to have_content("Peter Jackson")
       expect(page).to have_content("Guillermo del Toro")
     end
 
-    within "#director1" do
-      expect(page).to have_content("Peter Jackson")
-    end
+    it "displays directors by most recently created" do
+      kubrick = Director.create!(name: "Stanley Kubrick", academy_awards: 13, deceased: true)
+      carpenter = Director.create!(name: "John Carpenter", academy_awards: 0, deceased: false)
+      jackson = Director.create!(name: "Peter Jackson", academy_awards: 9, deceased: false)
+      toro = Director.create!(name: "Guillermo del Toro", academy_awards: 6, deceased: false)
 
-    within "#director2" do
-      expect(page).to have_content("John Carpenter")
-    end
+      visit "/directors"
 
-    within "#director3" do
-      expect(page).to have_content("Stanley Kubrick")
+      within "#director0" do
+        expect(page).to have_content("Guillermo del Toro")
+      end
+
+      within "#director1" do
+        expect(page).to have_content("Peter Jackson")
+      end
+
+      within "#director2" do
+        expect(page).to have_content("John Carpenter")
+      end
+
+      within "#director3" do
+        expect(page).to have_content("Stanley Kubrick")
+      end
     end
   end
 
-  describe "#directors index links" do  
+  describe "#directors index page links" do  
     it "has link to director index" do
       carpenter = Director.create!(name: "John Carpenter", academy_awards: 0, deceased: false)
 
@@ -79,6 +81,7 @@ RSpec.describe "directors index page", type: :feature do
       expect(current_path).to eq("/films")
     end
 
+  describe "#creating a new director" do 
     it "has link to create new director" do
       kubrick = Director.create!(name: 'Stanley Kubrick', academy_awards: 13, deceased: true)
       carpenter = Director.create!(name: 'John Carpenter', academy_awards: 0, deceased: false)
@@ -136,7 +139,9 @@ RSpec.describe "directors index page", type: :feature do
         expect(current_path).to eq("/directors/#{kubrick.id}/edit")
       end
     end
+  end
 
+  describe "#delete an existing director" do 
     it 'has button to delete directors' do
       kubrick = Director.create!(name: 'Stanley Kubrick', academy_awards: 13, deceased: true)
       carpenter = Director.create!(name: 'John Carpenter', academy_awards: 0, deceased: false)
@@ -165,6 +170,7 @@ RSpec.describe "directors index page", type: :feature do
         expect(page).to have_button('Delete')
       end
     end
+
     it 'click button to delete directors' do
       kubrick = Director.create!(name: 'Stanley Kubrick', academy_awards: 13, deceased: true)
       carpenter = Director.create!(name: 'John Carpenter', academy_awards: 0, deceased: false)
@@ -173,7 +179,7 @@ RSpec.describe "directors index page", type: :feature do
 
       visit "/directors"
       
-      expect(page).to have_content('Guillermo del Toro')
+        expect(page).to have_content('Guillermo del Toro')
 
       within "#director0" do
 
@@ -183,7 +189,8 @@ RSpec.describe "directors index page", type: :feature do
 
       visit "/directors"
 
-      expect(page).to_not have_content("Guillermo del Toro")
+        expect(page).to_not have_content("Guillermo del Toro")
+      end
     end
   end
 end

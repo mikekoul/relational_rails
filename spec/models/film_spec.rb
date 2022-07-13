@@ -13,7 +13,7 @@ RSpec.describe Film, type: :model do
     it { should belong_to :director }
   end
 
-  describe 'methods' do
+  describe '#methods' do
     it 'return true for the films that are streaming on netflix' do
       kubrick = Director.create!(name: 'Stanley Kubrick', academy_awards: 13, deceased: true)
       carpenter = Director.create!(name: 'John Carpenter', academy_awards: 0, deceased: false)
