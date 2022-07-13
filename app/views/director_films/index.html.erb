@@ -7,6 +7,14 @@
   <p>Streaming on Netflix: <%= film.streaming_on_netflix %></p>
   </div>
 <% end %>
+</br>
+</br>
+  <%= form_with url: "/directors/#{@director.id}/films", method: :get, local: true do |form| %>
+  <b><%= form.label :runtime, "Search films longer than specified runtime" %></b></br>
+  <%= form.text_field :film_runtimes_greater_than %></br>
+  <%= form.submit "Search" %>
+  <% end %>
+  </br>
   <%= link_to "Sort Films Alphabetically", "/directors/#{@director.id}/films?sort=alpha" %></br>
   </br>
   <%= link_to "Add Film", "/directors/#{@director.id}/films/new" %></br>

@@ -3,6 +3,8 @@ class DirectorFilmsController < ApplicationController
     @director = Director.find(params[:director_id])
     if params[:sort] == "alpha"
       @films = @director.films.sort_alphabetically
+    elsif params[:film_runtimes_greater_than]
+      @films = @director.film_runtimes_greater_than(params[:film_runtimes_greater_than])
     else
       @films = @director.films
     end

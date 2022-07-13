@@ -114,7 +114,7 @@ RSpec.describe "Directors show page", type: :feature do
     expect(page).to have_link("Update")
     end
 
-    it 'has link to Delete director show page' do
+    it 'has link to delete director show page' do
       toro = Director.create!(name: 'Guillermo del Toro', academy_awards: 6, deceased: false)
       pans = toro.films.create!(name: 'Pans Labyrinth', runtime: 110, streaming_on_netflix: false)
       peak = toro.films.create!(name: 'Crimson Peak', runtime: 119, streaming_on_netflix: false)
